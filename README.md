@@ -1,65 +1,65 @@
-[![license][licenca-badge]][LICENSE]
+[! [license] [license-badge]] [LICENSE]
 
-### Apresentação
+### Presentation
 
-Exibe no painel de controle do OpenCart o mapa de vendas no Brasil com os pedidos divididos pelos estados brasileiros.
+Displays on the OpenCart control panel the sales map in Brazil with the orders divided by the Brazilian states.
 
-#### Importante:
+#### Important:
 
-Caso esteja utilizando uma versão do OpenCart inferior a 2.3, você estará instalando uma modificação.
+If you are using a version of OpenCart below 2.3, you will be installing a modification.
 
-Se estiver utilizando a versão 2.3 ou 3.0, você estará instalando uma extensão.
+If you are using version 2.3 or 3.0, you are installing an extension.
 
-### Instalação
+### Installation
 
- 1. Acesse o link: https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=22375.
- 2. Localize a versão mais atual e compatível com sua versão do OpenCart e faça o download.
- 3. Na administração da loja acesse o menu "**Extensões→Instalador**" (Extensions→Installer).
- 4. Na página do instalador, clique no botão "**Upload**" e selecione o arquivo '**mapa-vendas-brasil.ocmod.zip**' (que você baixou deste repositório), e aguarde a conclusão da instalação automática.
- 5. Após a instalação, caso esteja utilizando uma versão do OpenCart inferior a 2.3, acesse o menu "**Extensões→Modificações**" (Extensions→Modifications) e clique no botão "**Atualizar**" (Refresh), para que a modificação instalada e incrementada na loja, lembrando que não é o botão Atualizar do seu navegador, e sim o botão Atualizar na cor azul ao lado do botão laranja e vermelho na tela do próprio OpenCart.
- 6. Se estiver utilizando a versão 2.3 ou 3.0 do OpenCart, acesse o menu "**Extensões→Extensões**", filtre por "**Painéis**", localize a extensão "**Mapa de vendas no Brasil**", clique no botão "**Instalar**", depois no botão "**Editar**", no campo "**Largura/Colunas**" selecione **6**, no campo "**Situação**" selecione **Habilitado**, no campo "**Posição**" preencha com **5**, e clique no botão "**Salvar**", depois localize a extensão "**Mapa geográfico de vendas**", clique no botão "**Editar**", no campo "**Situação**" selecione **Desabilitado**, e clique no botão "**Salvar**".
+ 1. Access the link: https://www.opencart.com/index.php?route=marketplace/extension/info&extension_id=22375.
+ 2. Find the most current version and compatible with your version of OpenCart and download it.
+ 3. In the store administration, access the menu "** Extensions → Installer **" (Extensions → Installer).
+ 4. On the installer page, click the "** Upload **" button and select the file '** mapa-vendas-brasil.ocmod.zip **' (which you downloaded from this repository), and wait for the installation to complete automatic.
+ 5. After installation, if you are using an OpenCart version lower than 2.3, access the menu "** Extensions → Modifications **" (Extensions → Modifications) and click the "** Update **" button (Refresh) to that the modification installed and increased in the store, remembering that it is not the Update button on your browser, but the Update button in blue color next to the orange and red button on the OpenCart screen.
+ 6. If you are using version 2.3 or 3.0 of OpenCart, access the menu "** Extensions → Extensions **", filter for "** Panels **", find the extension "** Sales map in Brazil **" , click the "** Install **" button, then the "** Edit **" button, in the "** Width / Columns **" field, select ** 6 **, in the "** Situation **" field select ** Enabled **, in the "** Position **" field, fill in ** 5 **, and click the "** Save **" button, then locate the extension "** Geographic sales map **" , click the "** Edit **" button, in the "** Situation **" field select ** Disabled **, and click the "** Save **" button.
 
-### Desinstalação
+### Uninstallation
 
-Caso esteja utilizando uma versão do OpenCart inferior a 2.3, na administração da loja, acesse o menu **Extensões→Modificações** (Extensions→Modifications), selecione a modificação com o nome '**Mapa de vendas no Brasil**', depois clique no botão "**Excluir**" (Delete), e no botão "**Atualizar**" (Refresh).
+If you are using an OpenCart version lower than 2.3, in the store administration, access the menu ** Extensions → Modifications ** (Extensions → Modifications), select the modification with the name '** Sales map in Brazil **', then click the "** Delete **" button (Delete), and the "** Update **" button (Refresh).
 
-Se estiver utilizando a versão 2.3 ou 3.0, acesse o menu "**Extensões→Extensões**", filtre por "**Painéis**", localize a extensão "**Mapa de vendas no Brasil**", clique no botão "**Excluir**" (Delete), depois localize a extensão "**Mapa geográfico de vendas**", clique no botão "**Editar**", no campo "**Situação**" selecione **Habilitado**, e clique no botão "**Salvar**".
+If you are using version 2.3 or 3.0, access the menu "** Extensions → Extensions **", filter for "** Panels **", find the extension "** Sales map in Brazil **", click the button "** Delete **" (Delete), then find the extension "** Geographic sales map **", click on the "** Edit **" button, in the "** Situation **" field select ** Enabled **, and click the "** Save **" button.
 
-### Atualização
+### Update
 
-Acesse a administração da loja e execute o procedimento de Desinstalação, depois execute o procedimento de Instalação, conforme sua versão do OpenCart.
+Access the store administration and perform the Uninstall procedure, then perform the Installation procedure, according to your version of OpenCart.
 
-### Correção para OpenCart 2.3.0.0, 2.3.0.1 e 2.3.0.2:
+### Correction for OpenCart 2.3.0.0, 2.3.0.1 and 2.3.0.2:
 
-Nestas versões do OpenCart, há um bug que impede de abrir as configurações de novas extensões do tipo "Painel" após clicar no botão Instalar, para corrigir o bug, faça o seguinte:
+In these versions of OpenCart, there is a bug that prevents you from opening the settings of new extensions of type "Panel" after clicking the Install button, to fix the bug, do the following:
 
-- Edite o arquivo abaixo (preferencialmente com o editor Notepad++):
+- Edit the file below (preferably with the Notepad ++ editor):
 
-admin/controller/extension/extension/**dashboard.php**
+admin / controller / extension / extension / ** dashboard.php **
 
-- Localize a linha abaixo:
+- Locate the line below:
 
-``$this->model_extension_extension->install('dashboard', 'dashboard_' . $this->request->get['extension']);``
+`` $ this-> model_extension_extension-> install ('dashboard', 'dashboard_'. $ this-> request-> get ['extension']); ``
 
-- E substitua por:
+- And replace with:
 
-``$this->model_extension_extension->install('dashboard', $this->request->get['extension']);``
+`` $ this-> model_extension_extension-> install ('dashboard', $ this-> request-> get ['extension']); ``
 
-- Localize a linha abaixo:
+- Locate the line below:
 
-``$this->model_extension_extension->uninstall('dashboard', 'dashboard_' . $this->request->get['extension']);``
+`` $ this-> model_extension_extension-> uninstall ('dashboard', 'dashboard_'. $ this-> request-> get ['extension']); ``
 
-- E substitua por:
+- And replace with:
 
-``$this->model_extension_extension->uninstall('dashboard', $this->request->get['extension']);``
+`` $ this-> model_extension_extension-> uninstall ('dashboard', $ this-> request-> get ['extension']); ``
 
-Agora salve as alterações no arquivo, e instale a extensão novamente que o problema será resolvido.
+Now save the changes to the file, and install the extension again that the problem will be solved.
 
-### Dúvidas
+### Doubts
 
-O OCMOD (OpenCart Modification) é nativo do OpenCart, ou seja, não é necessário instalar nenhum complemento no OpenCart para utilizar modificações ou extensões no formato OCMOD, para mais informações sobre o OCMOD, segue o link para mais informações:
+OCMOD (OpenCart Modification) is native to OpenCart, that is, it is not necessary to install any add-on in OpenCart to use modifications or extensions in the OCMOD format, for more information about OCMOD, follow the link for more information:
 
 https://github.com/opencart/opencart/wiki/Modification-System
 
-[licenca-badge]: https://img.shields.io/badge/licença-GPLv3-blue.svg
-[LICENSE]: ./LICENSE
+[license-badge]: https://img.shields.io/badge/licença-GPLv3-blue.svg
+[LICENSE]: ./LICENSE 
